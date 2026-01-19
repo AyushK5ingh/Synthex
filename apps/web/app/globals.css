@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 10% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 20 14.3% 4.1%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 142 71% 45%;
+    --primary-foreground: 144 61% 98%;
+    --secondary: 240 5.9% 10%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 142 71% 45%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 142 71% 45%;
+    --chart-1: 142 71% 45%;
+    --chart-2: 155 60% 45%;
+    --chart-3: 199 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.CodeMirror {
+  min-height: 100vh;
+  font-size: 16px;
+  line-height: 1.8;
+  padding: 1.5rem;
+  font-family: 'JetBrains Mono', monospace;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  border-radius: var(--radius);
+  border: 1px solid hsl(var(--border));
+}
+
+.CodeMirror:focus-within {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+.remote-cursor {
+  border-left: 2px solid red;
+  height: 1em;
+  position: absolute;
+}
+
+/* Custom scrollbar for dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #444444; /* Dark gray for the scrollbar thumb */
+  border-radius: 10px;
+  border: 3px solid #1A1A1A; /* Dark border around the thumb */
+}
+
+::-webkit-scrollbar-track {
+  background: #2D2D2D; /* Dark track */
+  border-radius: 10px;
+}
+
+.editor-wrapper {
+  @apply relative w-full;
+}
+
+.editor-toolbar {
+  @apply absolute top-0 right-0 z-10 flex items-center gap-2 p-2 bg-[#2C2C2C] rounded-bl border border-[#3E3E3E];
+}
+
+.toolbar-button {
+  @apply p-1.5 rounded transition-colors text-[#D4D4D4] hover:bg-[#3E3E3E] focus:outline-none focus:ring-2 focus:ring-blue-500;
+}
+
+.language-select {
+  @apply bg-[#2C2C2C] border border-[#3E3E3E] text-[#D4D4D4] rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-blue-500;
+}
+
+/* Monaco Editor Overrides */
+.monaco-editor {
+  @apply font-['Fira_Code',monospace] !important;
+}
+
+.monaco-editor .margin {
+  @apply bg-[#1E1E1E] !important;
+}
+
+.monaco-editor .line-numbers {
+  @apply text-[#858585] !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-[#2C2C2C];
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-[#3E3E3E] rounded-full hover:bg-[#4E4E4E] transition-colors;
+}
+
+/* Split Pane Styles */
+.split {
+  @apply flex;
+}
+
+.gutter {
+  @apply bg-[#2C2C2C] hover:bg-[#3E3E3E] transition-colors;
+}
+
+.gutter.gutter-horizontal {
+  @apply cursor-col-resize;
+}
+
+.gutter.gutter-vertical {
+  @apply cursor-row-resize;
+}
+
+/* Prose Overrides */
+.prose {
+  @apply max-w-none;
+}
+
+.prose code {
+  @apply bg-[#2C2C2C] px-1.5 py-0.5 rounded text-[#D4D4D4];
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  @apply text-[#D4D4D4];
+}
+
+.prose p {
+  @apply text-[#D4D4D4];
+}
+
+.prose strong {
+  @apply text-[#D4D4D4];
+}
+
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
