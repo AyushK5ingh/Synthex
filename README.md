@@ -1,58 +1,105 @@
-# Turborepo Tailwind CSS starter
+# Synthex 🚀
 
-This Turborepo starter is maintained by the Turborepo core team.
+**Synthex** is a world-class, real-time collaborative AI-powered code editor designed for modern development workflows. It combines the power of advanced AI models with seamless real-time collaboration, allowing developers to build, edit, and ship code faster than ever before.
 
-## Using this example
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?style=flat&logo=github)](https://github.com/AyushK5ingh/Synthex)
+[![Next.js](https://img.shields.io/badge/Next.js-16%2B-000000?style=flat&logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.7-blue?style=flat&logo=typescript)](https://www.typescriptlang.org/)
+[![Turborepo](https://img.shields.io/badge/Turborepo-2.4-EF4444?style=flat&logo=turborepo)](https://turbo.build/)
 
-Run the following command:
+## ✨ Key Features
 
-```sh
-npx create-turbo@latest -e with-tailwind
-```
+- 🤖 **AI-First Editing**: Intelligent code generation and refactoring powered by Google Gemini and Azure AI.
+- 👥 **Real-time Collaboration**: Multi-user editing with conflict resolution using Yjs and ShareDB.
+- ⚡ **Turbo-Powered Monorepo**: High-performance monorepo management with Turborepo and pnpm.
+- 🏗️ **Modern UI/UX**: Premium interface built with Tailwind CSS, Framer Motion, and shadcn/ui.
+- 🔒 **Secure Auth**: Professional user management and authentication with Clerk.
+- 💰 **Payment Integration**: Seamless billing and payments powered by Razorpay.
+- 📁 **Cloud Storage**: Reliable file storage and management using AWS S3.
+- 📊 **Real-time Engine**: Low-latency communication via Socket.io.
 
-## What's inside?
+## 🏗️ Architecture
 
-This Turborepo includes the following packages/apps:
+Synthex is built as a robust monorepo with specialized applications and packages:
 
-### Apps and Packages
+### Apps
+- **`web`**: The main Next.js application, providing the core editor interface and user dashboard.
+- **`ai-service`**: A dedicated service for AI inference and database interactions via Prisma.
+- **`socket`**: Real-time synchronization server handling collaborative sessions.
+- **`docs`**: Comprehensive documentation site built with Next.js.
 
-- `docs`: a [Next.js](https://nextjs.org/) app with [Tailwind CSS](https://tailwindcss.com/)
-- `web`: another [Next.js](https://nextjs.org/) app with [Tailwind CSS](https://tailwindcss.com/)
-- `ui`: a stub React component library with [Tailwind CSS](https://tailwindcss.com/) shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+### Packages
+- **`ui`**: Shared React component library built with Tailwind CSS.
+- **`utils`**: Common utility functions shared across the monorepo.
+- **`eslint-config`**: Shared linting configurations.
+- **`tailwind-config`**: Centralized Tailwind CSS configuration.
+- **`typescript-config`**: Standardized TypeScript configurations.
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+## 🛠️ Tech Stack
 
-### Building packages/ui
+- **Frontend**: Next.js 16/19, React 19, Tailwind CSS v3/v4, Framer Motion, Monaco Editor.
+- **Backend**: Node.js, Express, Socket.io, Prisma ORM, Convex.
+- **Real-time**: Yjs, ShareDB, WebSocket.
+- **AI**: Google Generative AI (Gemini), Azure AI Inference.
+- **Storage**: AWS S3.
+- **Payments**: Razorpay.
+- **Auth**: Clerk.
+- **Infrastructure**: Turborepo, pnpm, Vercel.
 
-This example is set up to produce compiled styles for `ui` components into the `dist` directory. The component `.tsx` files are consumed by the Next.js apps directly using `transpilePackages` in `next.config.js`. This was chosen for several reasons:
+## 🚀 Getting Started
 
-- Make sharing one `tailwind.config.js` to apps and packages as easy as possible.
-- Make package compilation simple by only depending on the Next.js Compiler and `tailwindcss`.
-- Ensure Tailwind classes do not overwrite each other. The `ui` package uses a `ui-` prefix for it's classes.
-- Maintain clear package export boundaries.
+### Prerequisites
 
-Another option is to consume `packages/ui` directly from source without building. If using this option, you will need to update the `tailwind.config.js` in your apps to be aware of your package locations, so it can find all usages of the `tailwindcss` class names for CSS compilation.
+- Node.js 18+
+- pnpm 8+
+- MongoDB / PostgreSQL (depending on configuration)
+- AWS S3 Credentials
+- Clerk API Keys
+- Razorpay API Keys
+- Google Gemini / Azure AI Keys
 
-For example, in [tailwind.config.js](packages/tailwind-config/tailwind.config.js):
+### Installation
 
-```js
-  content: [
-    // app content
-    `src/**/*.{js,ts,jsx,tsx}`,
-    // include packages if not transpiling
-    "../../packages/ui/*.{js,ts,jsx,tsx}",
-  ],
-```
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/AyushK5ingh/Synthex.git
+   cd Synthex
+   ```
 
-If you choose this strategy, you can remove the `tailwindcss` and `autoprefixer` dependencies from the `ui` package.
+2. **Install dependencies**
+   ```bash
+   pnpm install
+   ```
 
-### Utilities
+3. **Set up environment variables**
+   Create `.env` files in `apps/web`, `apps/ai-service`, and `apps/socket` based on their respective `.env.example` / `.env.sample` files.
 
-This Turborepo has some additional tools already setup for you:
+4. **Run the development server**
+   ```bash
+   pnpm dev
+   ```
 
-- [Tailwind CSS](https://tailwindcss.com/) for styles
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+5. **Open your browser**
+   - Web App: [http://localhost:3000](http://localhost:3000)
+   - Docs: [http://localhost:3001](http://localhost:3001)
+
+## 🔧 Scripts
+
+- `pnpm dev`: Start all apps in development mode.
+- `pnpm build`: Build all apps for production.
+- `pnpm lint`: Run linting across the monorepo.
+- `pnpm check-types`: Run type checking.
+- `pnpm format`: Format the entire codebase with Prettier.
+
+## 🤝 Contributing
+
+We welcome contributions! Please follow these steps:
+1. Fork the repository.
+2. Create a feature branch (`git checkout -b feature/amazing-feature`).
+3. Commit your changes.
+4. Push to the branch.
+5. Open a Pull Request.
+
+---
+
+Made with ❤️ by [Ayush](https://github.com/AyushK5ingh) | Star ⭐ this repo if you found it helpful!
