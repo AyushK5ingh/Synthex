@@ -10,6 +10,7 @@ import Chatbot from "@components/chatbot/chatbot";
 import Script from "next/script";
 import RazorpayWrapper from "@components/razorpaywrapper";
 import { TanstackClientProvider } from "@components/wrapper/tanstackWrapper";
+import ScrollProgress from "@components/ui/scroll-progress";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -37,6 +38,7 @@ export default function RootLayout({
           suppressHydrationWarning
           className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-gradient-to-b from-gray-900 to-gray-950 text-gray-100 flex flex-col`}
         >
+          <ScrollProgress />
           <LoaderWrapper>
             <div className="contents" style={{ visibility: "visible" }}>
               <ConvexClientProvider>
