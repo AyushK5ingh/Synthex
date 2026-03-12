@@ -257,6 +257,9 @@ importers:
       '@repo/ui':
         specifier: workspace:*
         version: link:../../packages/ui
+      '@repo/utils':
+        specifier: workspace:*
+        version: link:../../packages/utils
       '@tabler/icons-react':
         specifier: ^3.30.0
         version: 3.35.0(react@19.2.1)
