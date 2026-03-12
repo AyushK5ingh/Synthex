@@ -520,6 +520,22 @@ importers:
         specifier: 5.7.3
         version: 5.7.3
 
+  packages/utils:
+    dependencies:
+      zod:
+        specifier: ^3.24.2
+        version: 3.25.76
+    devDependencies:
+      '@repo/eslint-config':
+        specifier: workspace:*
+        version: link:../eslint-config
+      '@repo/typescript-config':
+        specifier: workspace:*
+        version: link:../typescript-config
+      typescript:
+        specifier: 5.7.3
+        version: 5.7.3
+
 packages:
 
   /@alloc/quick-lru@5.2.0:
