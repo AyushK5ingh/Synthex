@@ -30,10 +30,17 @@ export default function HomePage() {
           </div>
           <div className="absolute top-0 w-full h-full bg-gradient-to-b from-black via-transparent to-black opacity-80" />
 
-          <div className="h-[30rem] w-full max-w-6xl mx-auto px-4 relative z-10">
-            {/* Subtle gradient orbs */}
-            <div className="absolute top-0 left-1/4 w-[300px] h-[300px] bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full mix-blend-screen filter blur-[80px] animate-pulse" />
-            <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full mix-blend-screen filter blur-[80px] animate-pulse delay-700" />
+  <div className="h-[30rem] w-full max-w-6xl mx-auto px-4 relative z-10">
+    {/* Subtle gradient orbs */}
+    <div className="absolute top-0 left-1/4 w-[300px] h-[300px] bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full mix-blend-screen filter blur-[80px] animate-pulse" />
+    <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full mix-blend-screen filter blur-[80px] animate-pulse delay-700" />
+
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      className="relative z-10 space-y-8"
+    >
 
               <motion.h1 
                 initial={{ opacity: 0, y: -20 }}
