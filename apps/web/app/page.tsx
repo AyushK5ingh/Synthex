@@ -35,27 +35,19 @@ export default function HomePage() {
             <div className="absolute top-0 left-1/4 w-[300px] h-[300px] bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full mix-blend-screen filter blur-[80px] animate-pulse" />
             <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full mix-blend-screen filter blur-[80px] animate-pulse delay-700" />
 
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8 }}
-              className="relative z-10 space-y-8"
-            >
               <motion.h1 
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-5xl md:text-6xl font-bold tracking-tight"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="text-6xl md:text-8xl font-bold tracking-tighter"
               >
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3b82f6] via-[#6366f1] to-[#ec4899]">
-            Build the Future
-          </span>
-          <br />
-          <TracingBeam className="mt-2">
-            <span className="text-white">
-              With Us
-            </span>
-          </TracingBeam>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 animate-gradient-x">
+                  Build the Future
+                </span>
+                <br />
+                <span className="text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">
+                  With Precision
+                </span>
               </motion.h1>
               
               <motion.p 
