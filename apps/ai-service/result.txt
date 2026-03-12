@@ -1,0 +1,4 @@
+[dotenv@17.3.1] injecting env (2) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+(node:39752) [DEP0180] DeprecationWarning: fs.Stats constructor is deprecated.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+The sample encountered an error: Request failed with status 403: "{\"error\":{\"code\":\"no_access\",\"message\":\"No access to model: /gpt-4o\",\"details\":\"No access to model: /gpt-4o\"}}\n"

@@ -1,0 +1,24 @@
+{
+  "name": "@synthex/ai-service",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "index.ts",
+  "scripts": {
+    "dev": "ts-node index.ts",
+    "generate": "prisma generate",
+    "db:push": "prisma db push"
+  },
+  "dependencies": {
+    "@azure-rest/ai-inference": "latest",
+    "@azure/core-auth": "latest",
+    "@prisma/client": "latest",
+    "dotenv": "latest"
+  },
+  "devDependencies": {
+    "prisma": "latest",
+    "ts-node": "latest",
+    "typescript": "latest",
+    "@types/node": "latest"
+  }
+}
